@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+
+// The stateful widget is no longer a stateful widget due to a change
+class Counter extends StatelessWidget {
+  const Counter({super.key});
+
+// The other lines of code must be removed
+void callbackfunction(){
+  print("The button can be pressed.");
+}
+
+// Made a callback function
+  @override
+  Widget build(BuildContext context) {
+ 
+    // Return a row widget to arrange it's children
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        ElevatedButton(
+          
+          // The callback method name has been updated
+          onPressed: callbackfunction,
+          // onPressed refer to callback method
+          
+          // The next button is updated
+          child: const Text('increment'),
+        ),
+        const SizedBox(width: 16),
+      ],
+    );
+  }
+}
+
+void main() {
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Counter(),
+        ),
+      ),
+    ),
+  );
+}
